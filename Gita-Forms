@@ -1,3 +1,15 @@
+<?php
+/*----------code by Rafael Barraza 07/16/2017----------------------------*/
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "gita";
+
+// Updated 8/22/17 - Jeremy Wood
+// Shortened the sql variable to us 'sql' - Jeremy Wood
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,15 +52,32 @@
 					GITA Forms
 				</span>
 
-				<span class="icons" ><i class="fa fa-user fa-2x"></i></span><div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
-					<span class="label-input100">FULL NAME *</span>
-					<input class="input100" type="text" name="name" placeholder="Enter Your Name">
+				<!--
+          <span class="icons" ><i class="fa fa-user fa-2x"></i></span>
+        -->
+        <div class="wrap-input25 validate-input bg1" data-validate="Please Type Your Name" >
+					<span class="label-input100">First NAME *</span>
+					<input class="input100" type="text" name="FirstName" placeholder="Enter Your Name">
 				</div>
 
-				<div class="wrap-input100 validate-input bg1" data-validate="Please Type Your Name">
+        <div class="wrap-input25 validate-input bg1" data-validate="Please Type Your Name" >
+          <span class="label-input100">middle initial *</span>
+          <input class="input100" type="text" name="middle_initial" placeholder="Enter Your Name">
+        </div>
+
+        <div class="wrap-input25 validate-input bg1" data-validate="Please Type Your Name" >
+          <span class="label-input100">Last NAME *</span>
+          <input class="input100" type="text" name="LastName" placeholder="Enter Your Name">
+        </div>
+
+
+
+				<div class="wrap-input25 validate-input bg1" data-validate="Please Type Your Name">
 					<span class="label-input100">City *</span>
 					<input class="input100" type="text" name="city" placeholder="Enter Your Name">
 				</div>
+
+         
 
 				<div class="wrap-input25 input100-select bg1">
 					<span class="label-input100">State *</span>
@@ -110,7 +139,26 @@
 					</div>
 				</div>
 
-				<div class="wrap-input25 input100-select bg1">
+
+        <div class="wrap-input25 input100-select bg1">
+          <span class="label-input100">TIMEZONE *</span>
+          <div>
+            <select class="js-select2" name="TimeZone">
+  <option value="EST">Eastern Standard Time</option> 
+  <option value="CST">Central Standard Time</option> 
+  <option value="MST">Mountain Standard Time</option>
+  <option value="PST">Pacific Standard Time </option>
+  <option value="AKT">AKT</option>
+  <option value="HT">HT</option>
+  <option value="ST">ST</option>
+  <option value="AT">AT</option> 
+  <option value="ChT">ChT</option> 
+            </select>
+            <div class="dropDownSelect2"></div>
+          </div>
+        </div>
+
+				<div class="wrap-input50 input100-select bg1">
 					<span class="label-input100">When are you primarily available? *</span>
 					<div>
 						<select class="js-select2" name="availability">
@@ -123,7 +171,7 @@
 					</div>
 				</div>
 
-				<div class="wrap-input25 input100-select bg1">
+				<div class="wrap-input50 input100-select bg1">
 					<span class="label-input100">What is your degree level? *</span>
 					<div>
 						<select class="js-select2" name="degree">
@@ -162,13 +210,13 @@
 						<span class="label-input100">Are you able to meet with Mentor at least one time per week?</span>
 
 						<div class="contact100-form-radio m-t-15">
-							<input class="input-radio100" id="radio3" type="radio" name="time" value="yes" >
+							<input class="input-radio100" id="radio3" type="radio" name="preweek" value="yes" >
 							<label class="label-radio100" for="radio3">
 								Yes
 							</label>
 						</div>
 						<div class="contact100-form-radio">
-							<input class="input-radio100" id="radio4" type="radio" name="time" value="no">
+							<input class="input-radio100" id="radio4" type="radio" name="preweek" value="no">
 							<label class="label-radio100" for="radio4">
 								No
 							</label>
